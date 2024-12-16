@@ -320,7 +320,11 @@ model.fit(X_train, y_train)
 plt.figure(figsize=(15, 10))
 plot_tree(model, feature_names=X_train.columns, filled=True)
 plt.show()
+save_path = '/kaggle/working/ML_Model.pkl'
+with open(save_path, 'wb') as file:
+    pickle.dump(model, file)
 
+print(f"Model saved to {save_path}")
 # Model 2
 # Naive Bayes
 
